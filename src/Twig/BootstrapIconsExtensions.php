@@ -12,6 +12,9 @@ class BootstrapIconsExtensions extends AbstractExtension
 {
     static ?string $iconsPath = null;
 
+    /**
+     * @return TwigFunction[]
+     */
     public function getFunctions()
     {
         return [
