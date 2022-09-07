@@ -4,28 +4,6 @@ Twig Integration for [Bootstrap Icons](https://icons.getbootstrap.com/). This bu
 
 ## Installation
 
-Add twbs/icons as a custom repository to your root composer.json:
-```
-[...]
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "twbs/icons",
-                "version": "1.4.1",
-                "source": {
-                    "url": "https://github.com/twbs/icons",
-                    "type": "git",
-                    "reference": "tags/v1.4.1"
-                }
-            }
-        }
-    ],
-[...]
-```
-
-then, install it
-
 ```bash
 composer require whatwedo/twig-bootstrap-icons
 ```
