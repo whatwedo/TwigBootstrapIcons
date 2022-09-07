@@ -47,11 +47,11 @@ class BootstrapIconsExtensions extends AbstractExtension
 
         foreach (ClassLoader::getRegisteredLoaders() as $vendorDir => $loader) {
             $installed = require $vendorDir . '/composer/installed.php';
-            if (isset($installed['versions']['twbs/icons'])) {
-                return static::$iconsPath = $vendorDir . '/twbs/icons';
+            if (isset($installed['versions']['twbs/bootstrap-icons'])) {
+                return static::$iconsPath = $vendorDir . '/twbs/bootstrap-icons';
             }
         }
 
-        throw new RuntimeException('twbs/icons is not installed');
+        throw new RuntimeException('twbs/bootstrap-icons is not installed');
     }
 }
