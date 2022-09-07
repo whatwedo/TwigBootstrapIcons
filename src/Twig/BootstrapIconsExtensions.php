@@ -1,16 +1,16 @@
 <?php
+
 declare(strict_types=1);
 
 namespace whatwedo\TwigBootstrapIcons\Twig;
 
 use Composer\Autoload\ClassLoader;
-use RuntimeException;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
 class BootstrapIconsExtensions extends AbstractExtension
 {
-    static ?string $iconsPath = null;
+    public static ?string $iconsPath = null;
 
     /**
      * @return TwigFunction[]
@@ -18,7 +18,9 @@ class BootstrapIconsExtensions extends AbstractExtension
     public function getFunctions()
     {
         return [
-            new TwigFunction('bootstrap_icon', [$this, 'getIcon'], ['is_safe' => ['html']]),
+            new TwigFunction('bootstrap_icon', [$this, 'getIcon'], [
+                'is_safe' => ['html'],
+            ]),
         ];
     }
 
@@ -26,15 +28,17 @@ class BootstrapIconsExtensions extends AbstractExtension
     {
         $iconPath = sprintf('%s/icons/%s.svg', $this->getIconsPath(), $icon);
 
-        if (!is_file($iconPath)) {
-            throw new RuntimeException(sprintf('Icon "%s" not found.', $icon));
+        if (! is_file($iconPath)) {
+            throw new \RuntimeException(sprintf('Icon "%s" not found.', $icon));
         }
 
-        array_walk($attributes, static function(&$val, $key) { $val = $key . '="' . $val . '" '; });
+        array_walk($attributes, static function (&$val, $key) {
+            $val = $key . '="' . $val . '" ';
+        });
 
         return str_replace(
             '<svg ',
-            '<svg '.implode(' ', $attributes),
+            '<svg ' . implode(' ', $attributes),
             preg_replace('/class=".*?"/', '', file_get_contents($iconPath))
         );
     }
@@ -52,6 +56,6 @@ class BootstrapIconsExtensions extends AbstractExtension
             }
         }
 
-        throw new RuntimeException('twbs/bootstrap-icons is not installed');
+        throw new \RuntimeException('twbs/bootstrap-icons is not installed');
     }
 }
