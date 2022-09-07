@@ -13,13 +13,16 @@
         "twbs/bootstrap-icons": "^1.0"
     },
     "require-dev": {
-        "twig/twig": "^2.12|^3.0",
-        "twbs/bootstrap-icons": "^1.0"
+        "whatwedo/php-coding-standard": "^1.0"
     },
     "autoload": {
         "psr-4": {
             "whatwedo\\TwigBootstrapIcons\\": "src/"
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }
-
