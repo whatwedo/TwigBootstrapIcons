@@ -13,11 +13,13 @@
         "twbs/bootstrap-icons": "^1.0"
     },
     "require-dev": {
-        "whatwedo/php-coding-standard": "^1.0"
+        "whatwedo/php-coding-standard": "^1.0",
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {
-            "whatwedo\\TwigBootstrapIcons\\": "src/"
+            "whatwedo\\TwigBootstrapIcons\\": "src/",
+            "whatwedo\\TwigBootstrapIcons\\Tests\\": "tests/"
         }
     },
     "config": {
