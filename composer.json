@@ -2,20 +2,6 @@
     "name": "whatwedo/twig-bootstrap-icons",
     "type": "library",
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "twbs/icons",
-                "version": "1.4.1",
-                "source": {
-                    "url": "https://github.com/twbs/icons",
-                    "type": "git",
-                    "reference": "tags/v1.4.1"
-                }
-            }
-        }
-    ],
     "authors": [
         {
             "name": "whatwedo GmbH",
@@ -24,7 +10,11 @@
     ],
     "require": {
         "twig/twig": "^2.12|^3.0",
-        "twbs/icons": "^1.0"
+        "twbs/bootstrap-icons": "^1.0"
+    },
+    "require-dev": {
+        "twig/twig": "^2.12|^3.0",
+        "twbs/bootstrap-icons": "^1.0"
     },
     "autoload": {
         "psr-4": {
