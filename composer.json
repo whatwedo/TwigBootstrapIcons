@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "twig/twig": "^2.12|^3.0",
+        "twig/twig": "^2.15.3|^3.4.3",
         "twbs/bootstrap-icons": "^1.0"
     },
     "require-dev": {
