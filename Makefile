@@ -29,4 +29,11 @@ install:
 ecs:
 	vendor/bin/ecs --fix
 
+## run tests
+test:
+	vendor/bin/phpunit
+
+## run phpstan
+phpstan:
+	vendor/bin/phpstan analyze src tests --level 5
 

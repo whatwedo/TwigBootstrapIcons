@@ -15,7 +15,7 @@ class BootstrapIconsExtensions extends AbstractExtension
     /**
      * @return TwigFunction[]
      */
-    public function getFunctions()
+    public function getFunctions(): array
     {
         return [
             new TwigFunction('bootstrap_icon', [$this, 'getIcon'], [
@@ -33,12 +33,12 @@ class BootstrapIconsExtensions extends AbstractExtension
         }
 
         array_walk($attributes, static function (&$val, $key) {
-            $val = $key . '="' . $val . '" ';
+            $val = $key.'="'.$val.'" ';
         });
 
         return str_replace(
             '<svg ',
-            '<svg ' . implode(' ', $attributes),
+            '<svg '.implode(' ', $attributes),
             preg_replace('/class=".*?"/', '', file_get_contents($iconPath))
         );
     }
@@ -50,9 +50,9 @@ class BootstrapIconsExtensions extends AbstractExtension
         }
 
         foreach (ClassLoader::getRegisteredLoaders() as $vendorDir => $loader) {
-            $installed = require $vendorDir . '/composer/installed.php';
+            $installed = require $vendorDir.'/composer/installed.php';
             if (isset($installed['versions']['twbs/bootstrap-icons'])) {
-                return static::$iconsPath = $vendorDir . '/twbs/bootstrap-icons';
+                return static::$iconsPath = $vendorDir.'/twbs/bootstrap-icons';
             }
         }
 
